@@ -4,6 +4,8 @@ services:
   my-php-app:
     # カレントディレクトリでイメージを構築
     build: .
+    # /bin/bashでプロセスを継続させてコンテナの正常終了を防ぐ
+    command: bash -c "composer install && /bin/bash"
     # カレントディレクトリをコンテナへマウント
     volumes:
       - "./:/usr/src/myapp"
