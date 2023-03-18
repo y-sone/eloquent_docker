@@ -8,9 +8,18 @@ services:
     command: bash -c "composer install && /bin/bash"
     # カレントディレクトリをコンテナへマウント
     volumes:
-      - "./:/usr/src/myapp"
+      - .:/usr/src/myapp
     # プロセスを継続させてコンテナの正常終了を防ぐ
     stdin_open: true
+
+# composerを別コンテナで起動することも可能
+# この場合my-php-appのcommandは不要
+#  composer:
+#    image: composer:latest
+#    volumes:
+#      - .:/usr/src/myapp
+#    working_dir: /usr/src/myapp
+#    command: install
 
   db:
     image: mysql:8.0.32
