@@ -1,6 +1,6 @@
 <?php
 
-require_once '/usr/src/myapp/app/connection.php';
+require_once 'app/connection.php';
 
 use Illuminate\Database\Eloquent\Model;
 

@@ -1,7 +1,7 @@
 <?php
 
-require_once 'connection.php';
-require_once 'Models/User.php';
+require_once 'app/connection.php';
+require_once 'app/Models/User.php';
 
 /**
  * 準備

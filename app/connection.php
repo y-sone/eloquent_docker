@@ -1,6 +1,6 @@
 <?php
 
-require_once '/usr/src/myapp/vendor/autoload.php';
+require_once 'vendor/autoload.php';
 
 use Illuminate\Database\Capsule\Manager as Capsule;
 
