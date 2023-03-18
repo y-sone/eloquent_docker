@@ -21,4 +21,32 @@
 % docker-compose exec my-php-app composer require illuminate/database
 ```
 
+## mysqlへログイン
+```bash
+% docker-compose exec db bash
+# コンテナ内部へ
+% mysql -uroot -p
+Enter password:
+````
+
+# お役立ちコマンド
+```bash
+# コンテナの削除
+% docker-compose down
+
+# 再ビルド・docker-compose.yml編集後に実行
+% docker-compose up -d --build
+
+# 起動中のコンテナを確認
+% docker-compose ps
+
+# PHP実行環境の動作確認
+% docker-compose exec my-php-app composer --version
+% docker-compose exec my-php-app bash
+
+# DB実行環境の動作確認
+% docker-compose exec db mysql --version
+% docker-compose exec db bash
+```
+
 # git clone後の反映手順
