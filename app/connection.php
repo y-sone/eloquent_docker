@@ -1,8 +1,8 @@
 <?php
 
-require_once 'vendor/autoload.php';
-
 use Illuminate\Database\Capsule\Manager as Capsule;
+
+require_once 'vendor/autoload.php';
 
 $capsule = new Capsule;
 
