@@ -11,6 +11,8 @@ require_once 'app/connection.php';
  * - create table eloquent_test.users (id int, email varchar(50));
  * - insert into eloquent_test.users values(1, 'test@example.com');
  */
-$users = $users = User::find(1);
-var_dump('id: ' . $users->id);
-var_dump('email: ' . $users->email);
+$users = $users = User::all();
+
+foreach ($users as $user) {
+    echo "id: {$user->id} name: {$user->name} email: {$user->email}\n";
+}
