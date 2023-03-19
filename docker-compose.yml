@@ -1,14 +1,14 @@
-version: "3"
+version: '3'
 
 services:
-  my-php-app:
+  web:
     # カレントディレクトリでイメージを構築
     build: .
     # /bin/bashでプロセスを継続させてコンテナの正常終了を防ぐ
     command: bash -c "composer install && /bin/bash"
     # カレントディレクトリをコンテナへマウント
     volumes:
-      - .:/usr/src/myapp
+      - .:/usr/src/web
     # プロセスを継続させてコンテナの正常終了を防ぐ
     stdin_open: true
 
@@ -25,6 +25,7 @@ services:
     image: mysql:8.0.32
     # コンテナが停止しても自動で再起動する
     restart: always
+    # ホストの13306番ポートにコンテナの3306番ポートをフォワード
     ports:
       - "13306:3306"
     environment:
