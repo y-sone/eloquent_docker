@@ -30,6 +30,6 @@ services:
       - "13306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: password
-    # 初期設定のSQLを実行
+    # コンテナ起動時に実行するSQL群をマウント
     volumes:
       - ./mysql/init:/docker-entrypoint-initdb.d
