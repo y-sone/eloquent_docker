@@ -1,6 +1,6 @@
 # 作成手順
 ## Docker環境の設定
-```bash
+```shell
 % mkdir eloquent_docker
 % cd eloquent_docker
 % touch docker-compose.yml
@@ -9,20 +9,20 @@
 ```
 
 ## git設定
-```bash
+```shell
 % git init
 % git branch -M main
 % git remote add origin git@github.com:y-sone/eloquent_docker.git
 ```
 
 ## Eloquentのインストール
-```bash
+```shell
 % docker-compose up -d
-% docker-compose exec my-php-app composer require illuminate/database
+% docker-compose exec web composer require illuminate/database
 ```
 
 ## mysqlへログイン
-```bash
+```shell
 % docker-compose exec db bash
 # コンテナ内部へ
 % mysql -uroot -p
@@ -30,7 +30,7 @@ Enter password:
 ````
 
 # お役立ちコマンド
-```bash
+```shell
 # コンテナの削除
 % docker-compose down
 
@@ -41,8 +41,8 @@ Enter password:
 % docker-compose ps
 
 # PHP実行環境の動作確認
-% docker-compose exec my-php-app composer --version
-% docker-compose exec my-php-app bash
+% docker-compose exec web composer --version
+% docker-compose exec web bash
 
 # DB実行環境の動作確認
 % docker-compose exec db mysql --version
@@ -50,3 +50,7 @@ Enter password:
 ```
 
 # git clone後の反映手順
+```shell
+% docker-compose up -d
+% docker-compose exec web php app/main.php
+```
